@@ -1,0 +1,211 @@
+body{
+    position: relative;
+    width: 100%;    
+}
+.modal-wrapper{
+    width: 100%;
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        opacity: .7;
+        z-index: 2;
+    }
+}
+.modal{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    transform: translate(100%, 50%);
+    z-index: 10;
+    width: 35%;
+    height: 385px;
+    background-color: $color-white;
+    box-shadow: $modal-box-shadow;
+    border: 1px solid $modal-border;
+    border-radius: $border-radius;
+    font-weight: $font-normal;
+    padding: 35px 35px 40px;
+    color: $theme-dark;
+    transition: transform 2s linear;
+}
+
+
+// Modal Header
+.modal-header{
+    margin-bottom: 42px;
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        font-size: $text-22;
+        margin-bottom: 7px;
+        img{
+            cursor: pointer;
+        }
+    }
+    &__info{
+        font-size: $text-13;
+        color: $text-light-color;
+    }
+}
+// Modal Header
+
+// Modal Body
+.modal-body{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 70px;
+    &__cord-wrapper{
+        display: block;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+        height: 106px;
+        border: 1px solid $modal-border;
+        border-radius: $border-radius;
+        transition: all ease-in-out .3s;
+        div:last-child {
+            img{
+                display: none;
+                position: absolute;
+                top: 3px;
+                right: 3px;
+            }
+        }
+        &:hover{
+            border: 1px solid $color-blue;
+        }
+    }
+    &__inner-bg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 70px;
+        border-radius: $border-radius;
+        margin-bottom: 3px;
+        img{
+            width: 26px;
+        }
+        
+    }
+    &--dropbox{
+        background: rgba(232, 244, 255, 1);
+    }
+    &--cloud{
+        background: rgba(235, 231, 255, 1);   
+    }
+    &--drive{
+        background: rgba(255, 246, 218, 1);
+    }
+}
+.active{
+    .icon-check{
+       display: block;
+    }
+}
+// Modal Body
+
+// Modal Footer
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    button:first-child{
+        margin-right: 11px;
+    }
+    .btn--cancel{
+        transition: all .3s ease-in;
+        &:hover{
+            background-color: rgb(231, 225, 225);
+            color: $color-white;
+            border: 1px solid $btn-border-color;
+        }
+    }
+    .btn--proceed{
+        transition: all .3s ease-in;
+        &:hover{
+            background-color: rgb(231, 225, 225);
+            color: $color-white;
+            border: 1px solid $btn-border-color;
+        }
+    }
+}
+// Modal Footer
+
+// Button Event
+#event{
+    visibility: hidden;
+}
+#event:target{
+    visibility: visible;
+} 
+// Button Event
+
+// Active class
+
+// Active class
+
+@media (max-width:576px) {
+    .hero-wrapper{
+        display: none;
+    }
+    .modal-wrapper{
+        width: 100vw;
+        height: 100vh;
+    }
+    .modal{
+        width: 100vw;
+        height: 100vh;
+        border: none;
+        box-shadow: none;
+        transform: none;
+    }
+    .modal-header{
+        margin-bottom: 15px;
+        &__title{
+            margin-bottom: 10px;
+        }
+        &__info{
+            text-align: left;
+        }
+    }
+    .modal-body{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        &__cord-wrapper{
+            width: 100%;
+            height: 130px;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        &__drive-name{
+            margin-top: 5px;
+        }
+    }
+    .modal-footer{
+        display: flex;
+        flex-direction: column-reverse;
+        button{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    }
+    .icon-check{
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        
+    }
+}
