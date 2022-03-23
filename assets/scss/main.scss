@@ -1,0 +1,179 @@
+.hero-wrapper{
+    width: 100%;
+    height: 100vh;
+}
+
+// Navbar
+.nav{
+    width: 100%;
+    display: flex;
+    box-shadow: 0px 4px 4px 0px #D2E7FA7A;
+    height: 64px;
+}
+.nav-left{
+    width: 17%;
+    padding: 16px 0px 16px 22px;
+    border-right: 1px solid $border-color;
+}
+.nav-right{
+    width: 100%;
+    display: flex;
+    padding: 8px 8px 8px 30px;
+        &__title{
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            h2{
+                font-size: $text-2xl;
+                font-weight: $font-normal;
+                color: $color-primary;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        &__menu{
+            display: flex;
+            button{
+                display: flex;
+                align-items: center;
+                margin-right: 8px;
+                img{
+                    margin-right: 6px;  
+                }
+            }
+            button:nth-child(3){
+                img{
+                    margin-right: 0;
+                }
+            }
+            button:nth-child(4){
+                img:first-child{
+                    margin-right: 8px;
+                }
+                img:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+// End Navbar
+
+// Main Wrapper
+.main-wrapper{
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    margin-top: 1px;
+}
+// End Main Wrapper
+
+// Scrollbar
+.center-wrapper::-webkit-scrollbar{
+    width: 2px;
+    height: 2px;    
+}
+::-webkit-scrollbar-track{
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $btn-border-color;
+    border-radius: 6px;
+    &:hover{
+        background-color: $text-light-grey;
+    }
+}
+// End Scrollbar
+
+// Center
+.center-wrapper{
+    width: 930px;
+    padding: 26px 30px 0 30px;
+    overflow: auto;
+}
+.nda-section{
+    width: 100%;
+    &__send-document{
+        margin-bottom: 8px;
+        font-size: $text-xs;
+        font-weight: $font-medium;
+    }
+    &__heading{
+        margin-bottom: 16px;
+        color: $theme-darkgrey;
+        font-size: $text-xl;
+        font-weight: $font-bold;
+    }
+}
+.creation-info-section{
+    width: 100%;
+    height: 96px;
+    margin-bottom: 5px;
+    background: $linear-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid $creation-info-border;
+    border-radius: $border-radius;
+    .status{
+        padding-left: 15px;
+    }
+    &--creation{
+        color: $text-light-grey;
+        font-size: $text-sm;
+        font-weight: $font-medium;
+        letter-spacing: 0.004em;
+        margin-bottom: 5px;
+    }
+    &--author{
+        color: $theme-darkgrey;
+        font-size: $text-15;
+        font-weight: $font-medium;
+        letter-spacing: 0.004em;
+    }
+    &__column-1{
+        display: flex;
+        flex-direction: column;
+    }
+    &__column-2{
+        display: flex;
+        flex-direction: column;
+    }
+    &__column-3{
+        display: flex;
+        flex-direction: column;
+    }
+    &__column-4{
+        display: flex;
+        flex-direction: column;
+        &:first-child{
+            padding-left: 10px;
+            }
+        }
+    }
+
+.time-line{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0px;
+    border-bottom: 1px solid $text-light-grey;
+    &__title{
+        width: 72px;
+        font-size: $text-lg;
+        font-weight: $font-normal;
+        color: $theme-darkgrey;
+    }
+    span{
+        display: flex;
+        align-items: center;
+    }
+    .btn--download-audit{
+        transition: all .3s ease-in;
+        &:hover{
+            background-color: rgb(231, 225, 225);
+            color: $color-white;
+            border: 1px solid $btn-border-color;
+            }
+        }
+}
+// End Center
